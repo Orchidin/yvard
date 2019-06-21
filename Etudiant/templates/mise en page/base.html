@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Projet Django</title>
+	
+	<link rel="stylesheet" type="text/css" href="{%static 'css/responsive.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/index.css' %}">
+	
+</head>
+<body>
+	<div class="pages">
+
+		<div class="entete">
+			{% include 'mise en page/navbar.html'%}
+
+		</div>
+
+		<div class="corps">
+			{% block content %}
+			{%endblock%}
+		</div>
+
+		<div class="pied">
+			{% include 'mise en page/footer.html'%}
+			
+		</div>
+	
+</div>
+</body>
+</html>

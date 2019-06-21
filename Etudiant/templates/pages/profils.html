@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Profils des étudiants</title>
+	<style type="text/css">
+		@import '../../css/index.css' ;
+		
+.conteneur{
+	visibility: hidden;
+}
+.social img{
+	visibility: hidden;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+}
+.fond_twi{
+	top: -40px; 	
+	z-index: 1;
+	display: block;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	transition: 0.5s;
+}
+.fond_twi{
+	background-color: #55acee;
+}
+.fond_face{
+	background-color: #3b5999;
+}
+.social:hover .fond_twi{
+	top: 0;
+}
+.social:hover .fond_face{
+	top: 0;
+}			
+body{
+	background-color: gray;
+}
+a{
+	color: blue;
+}
+img{
+	margin-right:12%;
+}
+
+		</style>
+</head>
+<body>
+
+
+<p>
+<center>{% extends 'mise en page/base.html' %}
+{% block content %}
+<img src="{{object.photo.url}}"><br/>
+<a>Matricule:{{object.matricule}}<br/></a>
+<a>Nom:{{object.nom}}<br/></a>
+<a>Prenom(s):{{object.prenom}}<br/></a>
+<a>Adresse:{{object.adresse}}<br/></a>
+<a>Option:{{object.option}}<br/></a>
+<a>Niveau:{{object.niveau}}<br/></a>
+<a>Description:{{object.description}}</a>
+
+
+{%endblock%}
+</center>
+</p>
+</body>
+</html>

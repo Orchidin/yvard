@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	@import '../../css/index.css' ;
+	body{
+		
+	}	
+h4{
+	color: gray;
+}
+li a{
+	color: gray;
+}
+hr{
+	color: black;
+	margin-right: 15%;
+	margin-left: 15%;
+
+} 
+.conteneur{
+	visibility: hidden;
+}
+.social img{
+	visibility: hidden;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+}
+.fond_twi{
+	top: -40px; 	
+	z-index: 1;
+	display: block;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	transition: 0.5s;
+}
+.fond_twi{
+	background-color: #55acee;
+}
+.fond_face{
+	background-color: #3b5999;
+}
+.social:hover .fond_twi{
+	top: 0;
+}
+.social:hover .fond_face{
+	top: 0;
+}		
+
+
+	
+	</style>
+</head>
+<body >
+
+
+{% extends 'mise en page/base.html' %}
+
+{% block content %}
+
+
+<h3>Liste des étudiants d'ECES</h3><br/></br>
+<hr>
+<h4>nombre d'etudiant enregistré({{etudiants|length}})</h4>
+
+<center><ul>
+	{% for etud in etudiants%}
+	<li><a href=" {%url 'profils' etud.id %}">{{etud.matricule}}-{{etud.nom|upper}}</a></li>
+	{% endfor %}
+</ul></center>
+
+{%endblock%}
+</body>
+</html>
+   
